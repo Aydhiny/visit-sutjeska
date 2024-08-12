@@ -1,34 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 
 const KraljevaSutjeska = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="bg-cover bg-center min-h-screen p-4" style={{ backgroundImage: 'url("/path-to-medieval-background.jpg")' }}>
-      <header className="bg-gray-900 text-white py-6 shadow-lg">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold md:text-5xl">Kraljeva Sutjeska</h1>
-          <p className="text-xl mt-2 md:text-2xl">A Historical Gem Near Kakanj</p>
-        </div>
+    <div className="relative min-h-screen bg-cover bg-center" style={{ 
+      backgroundImage: 'url("/images/pattern.jpg")',
+      backgroundSize: 'auto 250px', // Adjust this to scale the pattern
+      backgroundRepeat: 'repeat', // Ensure the pattern repeats
+      backgroundAttachment: 'fixed' // Keeps the pattern fixed during scroll
+    }}>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      <header className="bg-gray-900 text-white p-6 shadow-lg fixed w-full top-0 left-0 z-50">
+        <nav className="container mx-auto flex flex-wrap items-center justify-between">
+          <a href="#" className="text-2xl font-bold">Kraljeva Sutjeska</a>
+          <button
+            className="text-white block md:hidden"
+            onClick={toggleMenu}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <div className={`md:flex md:space-x-4 flex-col md:flex-row ${isOpen ? 'block' : 'hidden'}`}>
+            <a href="#about" className="hover:text-yellow-400 m-2">About</a>
+            <a href="#historical-significance" className="hover:text-yellow-400 m-2">Historical Significance</a>
+            <a href="#gallery" className="hover:text-yellow-400 m-2">Gallery</a>
+            <a href="#about-us" className="hover:text-yellow-400 m-2">About Us</a>
+            <a href="#location" className="hover:text-yellow-400 m-2">Location</a>
+          </div>
+        </nav>
       </header>
 
-      <main className="container mx-auto mt-8 p-6 bg-white bg-opacity-80 shadow-lg rounded-lg md:max-w-3xl">
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-4 text-center">About Kraljeva Sutjeska</h2>
-          <p className="text-gray-700 text-center md:text-lg">
-            Kraljeva Sutjeska is a historical location situated near Kakanj, known for its rich medieval heritage. This ancient site features the ruins of a royal complex and a monastery that played a significant role during the medieval period.
-          </p>
+      <main className="relative z-10 container mx-auto mt-24 p-6">
+        <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="text-white">
+            <h2 className="text-4xl font-bold mb-4">About Kraljeva Sutjeska</h2>
+            <p className="md:text-lg">
+              Kraljeva Sutjeska is a historical location situated near Kakanj, known for its rich medieval heritage. This ancient site features the ruins of a royal complex and a monastery that played a significant role during the medieval period.
+            </p>
+          </div>
+          <img src="/images/s2.jpg" alt="About Kraljeva Sutjeska" className="w-full h-auto rounded-lg shadow-lg" />
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-4 text-center">Historical Significance</h2>
-          <p className="text-gray-700 text-center md:text-lg">
-            The area has been a focal point in medieval history, serving as a center of culture and politics. The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.
-          </p>
+        <section id="historical-significance" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <img src="/images/s3.jfif" alt="Historical Significance" className="w-full h-auto rounded-lg shadow-lg" />
+          <div className="text-white">
+            <h2 className="text-4xl font-bold mb-4">Historical Significance</h2>
+            <p className="md:text-lg">
+              The area has been a focal point in medieval history, serving as a center of culture and politics. The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.
+            </p>
+          </div>
         </section>
 
-        <section className="mb-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Gallery</h2>
-          <p className="text-gray-700 mb-4 md:text-lg">
+        <section id="gallery" className="mb-16 text-center">
+          <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
+          <p className="text-white mb-4 md:text-lg">
             Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
           </p>
           <a
@@ -39,9 +84,9 @@ const KraljevaSutjeska = () => {
           </a>
         </section>
 
-        <section className="mb-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="text-gray-700 mb-4 md:text-lg">
+        <section id="about-us" className="mb-16 text-center">
+          <h2 className="text-4xl font-bold mb-4 text-white">About Us</h2>
+          <p className="text-white mb-4 md:text-lg">
             Learn more about our mission to preserve and promote the historical significance of Kraljeva Sutjeska. Our team is dedicated to bringing history to life.
           </p>
           <a
@@ -52,16 +97,19 @@ const KraljevaSutjeska = () => {
           </a>
         </section>
 
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-4 text-center">Location</h2>
-          <p className="text-gray-700 mb-4 text-center md:text-lg">
-            Find us on the map and plan your visit to Kraljeva Sutjeska. The site is accessible and well-connected.
-          </p>
+        <section id="location" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="text-white">
+            <h2 className="text-4xl font-bold mb-4">Location</h2>
+            <p className="md:text-lg">
+              Find us on the map and plan your visit to Kraljeva Sutjeska. The site is accessible and well-connected.
+            </p>
+          </div>
           <div className="relative overflow-hidden rounded-lg shadow-md">
             <iframe
               className="w-full h-64 md:h-80"
               src="https://www.google.com/maps/embed/v1/place?q=Kraljeva%20Sutjeska&key=YOUR_GOOGLE_MAPS_API_KEY"
               allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
         </section>

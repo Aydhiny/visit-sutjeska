@@ -2,13 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+html,
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body{
-    background-color:lightsteelblue;
-    background-image: 'url("./src/images/s2.png")';
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-center {
+    background-position: center;
+}
+
+.bg-opacity-80 {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
 }
