@@ -10,15 +10,16 @@ const KraljevaSutjeska = () => {
 
   return (
     <div className="relative min-h-screen bg-cover bg-center" style={{ 
-      backgroundImage: 'url("/images/pattern.jpg")',
-      backgroundSize: 'auto 250px', // Adjust this to scale the pattern
+      backgroundColor: '#e5e5db',
+      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23aca592' fill-opacity='0.22'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      backgroundSize: 'auto 250px', // Adjust the size of the pattern
       backgroundRepeat: 'repeat', // Ensure the pattern repeats
       backgroundAttachment: 'fixed' // Keeps the pattern fixed during scroll
     }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <header className="bg-gray-900 text-white p-6 shadow-lg fixed w-full top-0 left-0 z-50">
+      <header className="bg-stone-600 text-white p-8 shadow-lg fixed w-full top-0 left-0 z-50">
         <nav className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="#" className="text-2xl font-bold">Kraljeva Sutjeska</a>
           <button
@@ -54,6 +55,7 @@ const KraljevaSutjeska = () => {
         <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-white">
             <h2 className="text-4xl font-bold mb-4">About Kraljeva Sutjeska</h2>
+             <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
             <p className="md:text-lg">
               Kraljeva Sutjeska is a historical location situated near Kakanj, known for its rich medieval heritage. This ancient site features the ruins of a royal complex and a monastery that played a significant role during the medieval period.
             </p>
@@ -65,6 +67,7 @@ const KraljevaSutjeska = () => {
           <img src="/images/s3.jfif" alt="Historical Significance" className="w-full h-auto rounded-lg shadow-lg" />
           <div className="text-white">
             <h2 className="text-4xl font-bold mb-4">Historical Significance</h2>
+            <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
             <p className="md:text-lg">
               The area has been a focal point in medieval history, serving as a center of culture and politics. The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.
             </p>
