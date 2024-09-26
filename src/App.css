@@ -32,3 +32,33 @@
 .rounded-lg {
     border-radius: 0.5rem;
 }
+
+.bg-stone-600 {
+    transition: background-color 0.3s ease;
+}
+
+.bg-stone-600.scrolled {
+    background-color: rgba(82, 78, 70, 0.9);
+    /* Slightly transparent on scroll */
+}
+.gallery-wrapper {
+    /* Ensures the gallery images are in a row */
+    display: flex;
+    /* Centers the images */
+    justify-content: center;
+    /* Hides the scrollbar */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+img {
+    /* Adding a small margin to create space between images */
+    margin: 0 8px;
+}

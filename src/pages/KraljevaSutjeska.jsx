@@ -12,9 +12,9 @@ const KraljevaSutjeska = () => {
     <div className="relative min-h-screen bg-cover bg-center" style={{ 
       backgroundColor: '#e5e5db',
       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23aca592' fill-opacity='0.22'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      backgroundSize: 'auto 250px', // Adjust the size of the pattern
-      backgroundRepeat: 'repeat', // Ensure the pattern repeats
-      backgroundAttachment: 'fixed' // Keeps the pattern fixed during scroll
+      backgroundSize: 'auto 250px', 
+      backgroundRepeat: 'repeat',
+      backgroundAttachment: 'fixed'
     }}>
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -41,13 +41,13 @@ const KraljevaSutjeska = () => {
               />
             </svg>
           </button>
-          <div className={`md:flex md:space-x-4 flex-col md:flex-row ${isOpen ? 'block' : 'hidden'}`}>
-            <a href="#about" className="hover:text-yellow-400 m-2">About</a>
-            <a href="#historical-significance" className="hover:text-yellow-400 m-2">Historical Significance</a>
-            <a href="#gallery" className="hover:text-yellow-400 m-2">Gallery</a>
-            <a href="#about-us" className="hover:text-yellow-400 m-2">About Us</a>
-            <a href="#location" className="hover:text-yellow-400 m-2">Location</a>
-          </div>
+                <div className={`md:flex md:space-x-4 ${isOpen ? 'block' : 'hidden'}`}>
+                  <a href="#about" className="hover:text-yellow-400 m-2 block border-b border-white md:border-none">About</a>
+                  <a href="#historical-significance" className="hover:text-yellow-400 m-2 block border-b border-white md:border-none">Historical Significance</a>
+                  <a href="#gallery" className="hover:text-yellow-400 m-2 block border-b border-white md:border-none">Gallery</a>
+                  <a href="#about-us" className="hover:text-yellow-400 m-2 block border-b border-white md:border-none">About Us</a>
+                  <a href="#location" className="hover:text-yellow-400 m-2 block border-b border-white md:border-none">Location</a>
+                </div>
         </nav>
       </header>
 
@@ -74,18 +74,21 @@ const KraljevaSutjeska = () => {
           </div>
         </section>
 
-        <section id="gallery" className="mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
-          <p className="text-white mb-4 md:text-lg">
-            Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
-          </p>
-          <a
-            href="#"
-            className="inline-block mt-4 px-6 py-3 bg-yellow-600 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-700"
-          >
-            View Gallery
-          </a>
-        </section>
+<section id="gallery" className="mb-16 text-center">
+  <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
+  <p className="text-white mb-4 md:text-lg">
+    Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
+  </p>
+  
+  <div className="relative w-full overflow-hidden">
+    <div className="flex space-x-4 transform transition-transform duration-500 ease-out gallery-wrapper">
+      <img src="/images/gallery1.jpg" alt="Gallery Image 1" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
+      <img src="/images/gallery2.jpg" alt="Gallery Image 2" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
+      <img src="/images/gallery3.jpg" alt="Gallery Image 3" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
+      <img src="/images/gallery4.jfif" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
+    </div>
+  </div>
+</section>
 
         <section id="about-us" className="mb-16 text-center">
           <h2 className="text-4xl font-bold mb-4 text-white">About Us</h2>

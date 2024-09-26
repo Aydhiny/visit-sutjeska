@@ -5,3 +5,11 @@
 body {
     background-color: rgba(233, 230, 230, 0);
 }
+.bg-stone-600 {
+    transition: background-color 0.3s ease;
+}
+
+.bg-stone-600.scrolled {
+    background-color: rgba(82, 78, 70, 0.9);
+    /* Slightly transparent on scroll */
+}
