@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import LazyLoad from '../pages/LazyLoad'
+import LazyLoad from '../pages/LazyLoad';
+import Gallery from '../pages/Gallery';
 import '../App.css';
+
+
 
 const KraljevaSutjeska = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,21 +94,7 @@ const KraljevaSutjeska = () => {
   </div>
 </section>
 
-<section id="gallery" className="mb-16 text-center fade-in">
-  <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
-  <p className="text-white mb-4 md:text-lg">
-    Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
-  </p>
-  
-  <div className="relative w-full overflow-hidden">
-    <div className="flex space-x-4 transform transition-transform duration-500 ease-out gallery-wrapper">
-      <img src="/images/gallery1.jpg" alt="Gallery Image 1" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
-      <img src="/images/gallery2.jpg" alt="Gallery Image 2" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
-      <img src="/images/gallery3.jpg" alt="Gallery Image 3" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
-      <img src="/images/gallery4.jfif" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
-    </div>
-  </div>
-</section>
+<Gallery></Gallery>
 
         <section id="about-us" className="mb-16 text-center fade-in">
   <h2 className="text-4xl font-bold mb-4 text-white">About Us</h2>

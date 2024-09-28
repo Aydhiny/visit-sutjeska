@@ -42,20 +42,30 @@
     /* Slightly transparent on scroll */
 }
 .gallery-wrapper {
-    /* Ensures the gallery images are in a row */
     display: flex;
-    /* Centers the images */
-    justify-content: center;
-    /* Hides the scrollbar */
     overflow-x: auto;
+    /* Enable horizontal scrolling */
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    /* For Firefox */
+    /* Optional: Adds smooth snapping effect on scroll */
+    white-space: nowrap;
+    /* Ensure images are in a single line */
+    padding-bottom: 10px;
+    /* Add space for scroll bar on mobile if needed */
 }
 
-.gallery-wrapper::-webkit-scrollbar {
-    display: none;
-    /* For Chrome, Safari, and Opera */
+.gallery-wrapper img {
+    scroll-snap-align: center;
+    /* Optional: Ensure images snap into the center */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .gallery-wrapper img {
+        width: 50vw;
+        /* Adjust image size for mobile screens */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
 }
 
 img {
@@ -103,3 +113,4 @@ img {
 html {
     scroll-behavior: smooth;
 }
+
