@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LazyLoad from '../pages/LazyLoad'
 import '../App.css';
 
 const KraljevaSutjeska = () => {
@@ -52,29 +53,45 @@ const KraljevaSutjeska = () => {
       </header>
 
       <main className="relative z-10 container mx-auto mt-24 p-6">
-        <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="text-white">
-            <h2 className="text-4xl font-bold mb-4">About Kraljeva Sutjeska</h2>
-             <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
-            <p className="md:text-lg">
-              Kraljeva Sutjeska is a historical location situated near Kakanj, known for its rich medieval heritage. This ancient site features the ruins of a royal complex and a monastery that played a significant role during the medieval period.
-            </p>
-          </div>
-          <img src="/images/s2.jpg" alt="About Kraljeva Sutjeska" className="w-full h-auto rounded-lg shadow-lg" />
-        </section>
+        <LazyLoad>
+        <section id="about" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
+  <div className="text-white">
+    <h2 className="text-4xl font-bold mb-4">About Kraljeva Sutjeska</h2>
+    <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
+    <p className="md:text-lg">
+      Kraljeva Sutjeska is a historical location situated near Kakanj, known for its rich medieval heritage. 
+      This ancient site features the ruins of a royal complex and a monastery that played a significant role during the medieval period. 
+      The site is steeped in history, with evidence of settlement dating back to the 12th century. 
+      It was once a vibrant center of power, where the ruling aristocracy gathered, and significant decisions impacting the region were made.
+    </p>
+    <p className="md:text-lg mt-4">
+      The majestic architecture that remains showcases the intricate craftsmanship of the era, 
+      with stone carvings and structural designs that reflect the artistic sensibilities of medieval builders. 
+      Visitors can explore the remnants of the royal palace and the adjoining monastery, both of which provide a glimpse into the spiritual and administrative life of the time.
+    </p>
+  </div>
+  <img src="/images/s2.jpg" alt="About Kraljeva Sutjeska" className="w-full h-auto rounded-lg shadow-lg hover-effect" />
+</section>
+</LazyLoad>
 
-        <section id="historical-significance" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <img src="/images/s3.jfif" alt="Historical Significance" className="w-full h-auto rounded-lg shadow-lg" />
-          <div className="text-white">
-            <h2 className="text-4xl font-bold mb-4">Historical Significance</h2>
-            <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
-            <p className="md:text-lg">
-              The area has been a focal point in medieval history, serving as a center of culture and politics. The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.
-            </p>
-          </div>
-        </section>
+        <section id="historical-significance" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
+  <img src="/images/s3.jfif" alt="Historical Significance" className="w-full h-auto rounded-lg shadow-lg hover-effect" />
+  <div className="text-white">
+    <h2 className="text-4xl font-bold mb-4">Historical Significance</h2>
+    <h2 className="text-xl mb-4 font-semibold text-yellow-100">Kakanj, Turistical Monument</h2>
+    <p className="md:text-lg">
+      The area has been a focal point in medieval history, serving as a center of culture and politics. 
+      The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.
+    </p>
+    <p className="md:text-lg mt-4">
+      Additionally, Kraljeva Sutjeska was pivotal during various historical events, including the conflicts that shaped the region. 
+      It served as a refuge for many displaced people during turbulent times and stands today as a symbol of resilience and cultural heritage. 
+      The site attracts historians and tourists alike, drawn by its stories of the past and the beauty of its surroundings.
+    </p>
+  </div>
+</section>
 
-<section id="gallery" className="mb-16 text-center">
+<section id="gallery" className="mb-16 text-center fade-in">
   <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
   <p className="text-white mb-4 md:text-lg">
     Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
@@ -82,26 +99,32 @@ const KraljevaSutjeska = () => {
   
   <div className="relative w-full overflow-hidden">
     <div className="flex space-x-4 transform transition-transform duration-500 ease-out gallery-wrapper">
-      <img src="/images/gallery1.jpg" alt="Gallery Image 1" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
-      <img src="/images/gallery2.jpg" alt="Gallery Image 2" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
-      <img src="/images/gallery3.jpg" alt="Gallery Image 3" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
-      <img src="/images/gallery4.jfif" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out" />
+      <img src="/images/gallery1.jpg" alt="Gallery Image 1" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
+      <img src="/images/gallery2.jpg" alt="Gallery Image 2" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
+      <img src="/images/gallery3.jpg" alt="Gallery Image 3" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
+      <img src="/images/gallery4.jfif" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out slide-in" />
     </div>
   </div>
 </section>
 
-        <section id="about-us" className="mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">About Us</h2>
-          <p className="text-white mb-4 md:text-lg">
-            Learn more about our mission to preserve and promote the historical significance of Kraljeva Sutjeska. Our team is dedicated to bringing history to life.
-          </p>
-          <a
-            href="#"
-            className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
-          >
-            Learn More
-          </a>
-        </section>
+        <section id="about-us" className="mb-16 text-center fade-in">
+  <h2 className="text-4xl font-bold mb-4 text-white">About Us</h2>
+  <p className="text-white mb-4 md:text-lg">
+    Learn more about our mission to preserve and promote the historical significance of Kraljeva Sutjeska. 
+    Our team is dedicated to bringing history to life, fostering a deeper appreciation for the cultural treasures of our past.
+  </p>
+  <p className="text-white mb-4 md:text-lg">
+    We organize various educational programs, guided tours, and workshops that engage the community and visitors 
+    in exploring the rich history of this extraordinary site. Our goal is to ensure that the legacy of Kraljeva Sutjeska is cherished 
+    and that future generations can experience its beauty and learn from its history.
+  </p>
+  <a
+    href="#"
+    className="inline-block mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
+  >
+    Learn More
+  </a>
+</section>
 
         <section id="location" className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-white">

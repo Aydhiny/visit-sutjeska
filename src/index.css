@@ -13,3 +13,6 @@ body {
     background-color: rgba(82, 78, 70, 0.9);
     /* Slightly transparent on scroll */
 }
+html {
+    scroll-behavior: smooth;
+}
