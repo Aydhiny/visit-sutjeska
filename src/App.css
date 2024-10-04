@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 .container {
@@ -113,4 +114,114 @@ img {
 html {
     scroll-behavior: smooth;
 }
+.gallery-wrapper {
+    display: flex;
+    overflow-x: hidden;
+    /* Hide scrollbar */
+    white-space: nowrap;
+    padding-bottom: 10px;
+    /* Optional: You can re-enable scroll-snap if you'd like */
+    scroll-snap-type: none;
+}
 
+.gallery-wrapper img {
+    margin-right: 8px;
+    width: auto;
+    max-width: 16rem;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Hide scrollbar styles for different browsers */
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.gallery-wrapper {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Scrollbar */
+
+/* Custom Scrollbar for WebKit Browsers */
+::-webkit-scrollbar {
+    width: 16px;
+    /* Width of the scrollbar */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5a2b, #a0522d);
+    /* Gradient for the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners */
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    /* Border to create contrast with the track */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Shadow effect for depth */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a0522d, #d2691e);
+    /* Darker gradient on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* Stronger shadow on hover */
+    transform: scale(1.1);
+    /* Slight scale effect on hover */
+    transition: all 0.2s ease;
+    /* Smooth transition effect */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    /* Background color for the track */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    /* Makes scrollbar thinner */
+    scrollbar-color: #8b5a2b rgba(0, 0, 0, 0.2);
+    /* Color for thumb and track */
+}
+
+/* Additional styling for Firefox to mimic the unique design */
+*::-moz-scrollbar {
+    width: 16px;
+    /* Width of the scrollbar */
+}
+
+*::-moz-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5a2b, #a0522d);
+    /* Gradient for the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners */
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    /* Border to create contrast with the track */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Shadow effect for depth */
+}
+*::-moz-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a0522d, #d2691e);
+    /* Darker gradient on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* Stronger shadow on hover */
+    transform: scale(1.1);
+    /* Slight scale effect on hover */
+    transition: all 0.2s ease;
+    /* Smooth transition effect */
+}
+
+*::-moz-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    /* Background color for the track */
+    border-radius: 10px;
+    /* Rounded corners */
+}

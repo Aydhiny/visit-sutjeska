@@ -1,60 +1,118 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const Gallery = () => {
   const galleryRef = useRef(null);
+  const [fullScreenImage, setFullScreenImage] = useState(null); // State to track full-screen image
 
   useEffect(() => {
     const gallery = galleryRef.current;
 
-    // Only enable mouse hover scrolling on desktop
     const handleMouseMove = (e) => {
-      if (window.innerWidth > 768) { // Adjust for screens larger than 768px (desktop)
-        const rect = gallery.getBoundingClientRect(); // Gallery position
-        const mouseX = e.clientX - rect.left; // Mouse position relative to the gallery
-        const width = rect.width; // Width of the gallery
+      if (window.innerWidth > 768) { // Only for larger screens
+        const rect = gallery.getBoundingClientRect();
+        const mouseX = e.clientX - rect.left;
+        const width = rect.width;
 
-        // Calculate scroll percentage based on mouse position
         const scrollPercentage = mouseX / width;
-
-        // Adjust the scroll amount relative to the scroll width of the gallery
         const scrollAmount = scrollPercentage * (gallery.scrollWidth - width);
 
         gallery.scrollTo({
           left: scrollAmount,
-          behavior: 'smooth', // Optional: Smooth scrolling
+          behavior: 'smooth',
         });
       }
     };
 
-    gallery.addEventListener('mousemove', handleMouseMove);
+    if (window.innerWidth > 768) {
+      gallery.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
       gallery.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  return (
-    <section id="gallery" className="mb-16 text-center fade-in">
-      <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
-      <p className="text-white mb-4 md:text-lg">
-        Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
-      </p>
+  // Function to handle image click and set full-screen view
+  const handleImageClick = (imageSrc) => {
+    setFullScreenImage(imageSrc);
+  };
 
-      <div
-        className="relative w-full overflow-x-auto whitespace-nowrap cursor-pointer"
-        ref={galleryRef}
-      >
-        <div className="flex space-x-4 gallery-wrapper">
-          <img src="/images/gallery1.jpg" alt="Gallery Image 1" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          <img src="/images/gallery2.jpg" alt="Gallery Image 2" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          <img src="/images/gallery3.jpg" alt="Gallery Image 3" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          <img src="/images/gallery4.jfif" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          <img src="/images/s5.jpg" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          <img src="/images/s5.jpg" alt="Gallery Image 4" className="w-64 h-64 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out inline-block" />
-          {/* Add more images here */}
+  // Function to exit full-screen view
+  const handleBackButton = () => {
+    setFullScreenImage(null); // Reset the full-screen image
+  };
+
+  return (
+    <>
+      {/* Full-screen image view */}
+      {fullScreenImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
+          <img src={fullScreenImage} alt="Full-Screen" className="max-w-full max-h-full object-contain" />
+          <button
+            onClick={handleBackButton}
+            className="absolute bottom-4 left-4 px-4 py-2 bg-white text-black font-bold rounded-lg shadow-md"
+          >
+            Back
+          </button>
         </div>
-      </div>
-    </section>
+      )}
+
+      {/* Gallery section */}
+      <section id="gallery" className="m-16 text-center fade-in">
+        <h2 className="text-4xl font-bold mb-4 text-white">Gallery</h2>
+        <p className="text-white mb-4 md:text-lg">
+          Explore the gallery to view images of Kraljeva Sutjeska. See the stunning architecture and historical artifacts.
+        </p>
+
+        <div
+          className="relative w-full whitespace-nowrap cursor-pointer gallery-wrapper"
+          ref={galleryRef}
+        >
+          <img
+            src="/images/gallery1.jpg"
+            alt="Gallery Image 1"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/gallery1.jpg')}
+          />
+          <img
+            src="/images/gallery2.jpg"
+            alt="Gallery Image 2"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/gallery2.jpg')}
+          />
+          <img
+            src="/images/gallery3.jpg"
+            alt="Gallery Image 3"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/gallery3.jpg')}
+          />
+          <img
+            src="/images/gallery4.jfif"
+            alt="Gallery Image 4"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/gallery4.jfif')}
+          />
+          <img
+            src="/images/s5.jpg"
+            alt="Gallery Image 5"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/s5.jpg')}
+          />
+          <img
+            src="/images/s6.jpg"
+            alt="Gallery Image 5"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/s5.jpg')}
+          />
+          <img
+            src="/images/s8.jpg"
+            alt="Gallery Image 5"
+            className="object-cover rounded-lg shadow-lg hover-effect"
+            onClick={() => handleImageClick('/images/s5.jpg')}
+          />
+        </div>
+      </section>
+    </>
   );
 };
 
