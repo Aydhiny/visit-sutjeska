@@ -27,7 +27,7 @@ const KraljevaSutjeska = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-gray-700 opacity-75 mix-blend-multiply"></div>
 
-      <header className="bg-gray-800 bg-opacity-90 text-white p-8 shadow-lg fixed w-full top-0 left-0 z-50">
+      <header className="bg-gray-800 bg-opacity-60 text-white p-8 shadow-lg fixed w-full top-0 left-0 z-50">
         <nav className="container mx-auto flex flex-wrap items-center justify-around">
           <img
         src="/images/Kraljeva sutjeska.png" // Replace with your actual logo URL
