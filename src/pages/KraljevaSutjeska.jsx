@@ -8,12 +8,17 @@ import 'leaflet/dist/leaflet.css';
 const KraljevaSutjeska = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isEnglish, setIsEnglish] = useState(false);
+  const [isFading, setIsFading] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
    const toggleLanguage = () => {
-    setIsEnglish(!isEnglish);
+    setIsFading(true); // Start fade out
+    setTimeout(() => {
+      setIsEnglish(!isEnglish); // Toggle language after fade out
+      setIsFading(false); // Start fade in
+    }, 500); // Delay matches the CSS transition duration
   };
 
   return (
@@ -27,7 +32,7 @@ const KraljevaSutjeska = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-gray-900 to-gray-700 opacity-75 mix-blend-multiply"></div>
 
-      <header className="bg-gray-800 bg-opacity-60 text-white p-8 shadow-lg fixed w-full top-0 left-0 z-50">
+      <header className="bg-gray-800 bg-opacity-60 text-white p-3 shadow-lg fixed w-full top-0 left-0 z-50">
         <nav className="container mx-auto flex flex-wrap items-center justify-around">
           <img
         src="/images/Kraljeva sutjeska.png" // Replace with your actual logo URL
@@ -70,7 +75,7 @@ const KraljevaSutjeska = () => {
         </nav>
       </header>
 
-      <main className="relative z-10 container mx-auto p-6">
+      <main className={`relative z-10 container mx-auto p-6 fade ${isFading ? 'out' : ''}`}>
         <LazyLoad>
          <section id="about" className="mt-52 mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
             <div className="text-white">
@@ -94,12 +99,12 @@ const KraljevaSutjeska = () => {
          <section id="historical-significance" className=" grid grid-cols-1 md:grid-cols-2 gap-8 items-center fade-in">
           <img src="/images/s3.jfif" alt="Historical Significance" className="w-full h-auto rounded-lg shadow-lg hover-effect" />
           <div className="text-white">
-            <h2 className="text-4xl font-bold mb-4">{isEnglish ? 'Historical Significance' : 'Istorijska Značaj'}</h2>
+            <h2 className="text-4xl font-bold mb-4">{isEnglish ? 'Historical Significance' : 'Historijska Značaj'}</h2>
             <h2 className="text-xl mb-4 font-semibold text-yellow-100">{isEnglish ? 'Kakanj, Turistical Monument' : 'Kakanj, Turistički Spomenik'}</h2>
             <p className="md:text-lg">
               {isEnglish ? 
                 `The area has been a focal point in medieval history, serving as a center of culture and politics. The remnants of the royal palace and the monastery reflect the grandeur and significance of Kraljeva Sutjeska in its prime.` : 
-                `Ovo područje je bilo središte srednjovekovne istorije, služeći kao centar kulture i politike. Ostaci kraljevske palate i manastira odražavaju veličanstvenost i značaj Kraljeve Sutjeske u njenom vrhuncu.`}
+                `Ovo područje je bilo središte srednjovjekovne historije, služeći kao centar kulture i politike. Ostaci kraljevske palate i manastira odražavaju veličanstvenost i značaj Kraljeve Sutjeske u njenom vrhuncu.`}
             </p>
             <p className="md:text-lg mt-4">
               {isEnglish ? 
@@ -111,7 +116,7 @@ const KraljevaSutjeska = () => {
 
         <Gallery />
 
-        <section id="about-us" className="text-center fade-in">
+        <section id="about-us" className="mb-10 text-center fade-in">
   <h2 className="text-4xl font-bold mb-4 text-white">
     {isEnglish ? 'About Us' : 'O nama'}
   </h2>

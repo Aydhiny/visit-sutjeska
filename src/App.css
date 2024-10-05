@@ -228,3 +228,13 @@ html {
     border-radius: 10px;
     /* Rounded corners */
 }
+
+/* Animation for language change */
+.fade {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.fade.out {
+    opacity: 0;
+}

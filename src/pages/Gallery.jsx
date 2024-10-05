@@ -69,46 +69,54 @@ const Gallery = () => {
           ref={galleryRef}
           style={{ WebkitOverflowScrolling: 'touch' }} // Enables smooth scrolling on mobile
         >
+          {/* Responsive image size */}
           <img
             src="/images/gallery1.jpg"
             alt="Gallery Image 1"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }} // Adjust size for smaller screens
             onClick={() => handleImageClick('/images/gallery1.jpg')}
           />
           <img
             src="/images/gallery2.jpg"
             alt="Gallery Image 2"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/gallery2.jpg')}
           />
           <img
             src="/images/gallery3.jpg"
             alt="Gallery Image 3"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/gallery3.jpg')}
           />
           <img
             src="/images/gallery4.jfif"
             alt="Gallery Image 4"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/gallery4.jfif')}
           />
           <img
             src="/images/s5.jpg"
             alt="Gallery Image 5"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/s5.jpg')}
           />
           <img
             src="/images/s6.jpg"
             alt="Gallery Image 6"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/s6.jpg')}
           />
           <img
             src="/images/s8.jpg"
             alt="Gallery Image 7"
-            className="inline-block w-48 h-48 object-cover rounded-lg shadow-lg hover-effect mx-2"
+            className="inline-block object-cover rounded-lg shadow-lg hover-effect mx-2"
+            style={{ width: 'calc(100vw / 2)', height: 'calc(40vw / 2)' }}
             onClick={() => handleImageClick('/images/s8.jpg')}
           />
         </div>
